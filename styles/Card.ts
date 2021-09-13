@@ -54,7 +54,7 @@ const CardPlanetInfo = styled(`ul`, {
   paddingTop: `2rem`,
 
   'li': {
-    marginRight: `4rem`
+    marginRight: `2rem`
   },
 });
 

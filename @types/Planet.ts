@@ -1,4 +1,6 @@
-export interface Planet {
+/* eslint-disable no-undef */
+
+export interface IPlanet {
   alternativeName: string;
   aphelion: number;
   argPeriapsis: number;
@@ -10,7 +12,15 @@ export interface Planet {
   discoveredBy: string;
   discoveryDate: string;
   eccentricity: number;
-  englishName: string;
+  englishName:
+  | 'Mercury'
+  | 'Venus'
+  | 'Earth'
+  | 'Mars'
+  | 'Jupiter'
+  | 'Saturn'
+  | 'Uranus'
+  | 'Neptune';
   equaRadius: number;
   escape: number;
   flattening: number;
@@ -38,3 +48,15 @@ export interface Planet {
     volValue: number;
   };
 }
+
+export type IIsNotPlanet = {
+  id: 'ceres' | 'eris' | 'pluton' | 'haumea' | 'makemake';
+};
+
+export type IPlanetSideralOrbit = {
+  sideralOrbit: number;
+};
+
+export type IIsPlanet = {
+  isPlanet: boolean;
+};
