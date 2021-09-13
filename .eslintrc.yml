@@ -13,10 +13,10 @@ extends:
   - 'plugin:react-hooks/recommended'
 parserOptions:
   ecmaFeatures:
-    jsx: true
+    tsx: true
   ecmaVersion: 12
   sourceType: module
-parser: "babel-eslint"
+parser: "@typescript-eslint/parser"
 plugins:
   - 'react'
   - 'react-hooks'

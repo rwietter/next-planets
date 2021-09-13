@@ -1,5 +1,14 @@
-import { styled } from '@stitches/react';
+import { keyframes, styled } from '@stitches/react';
 import Image from 'next/image';
+
+export const rotate = keyframes({
+  '0%': {
+    transform: `rotate(0deg)`,
+  },
+  '100%': {
+    transform: `rotate(360deg)`,
+  },
+});
 
 const Card = styled(`section`, {
   backgroundImage: `linear-gradient(to left top, #151718, #151718, #151718, #151718,
@@ -14,7 +23,7 @@ const Card = styled(`section`, {
 
 const CardImage = styled(`div`, {
   position: `absolute`,
-  top: `-20px`,
+  top: `-40px`,
   right: `-4px`,
 });
 
@@ -53,11 +62,7 @@ const CardPlanetInfo = styled(`ul`, {
   flexFlow: `column`,
   lineHeight: 1.6,
   justifyContent: `space-evenly`,
-  padding: `2rem 0 0 2rem`,
-
-  li: {
-    marginRight: `2rem`,
-  },
+  padding: `2rem 0 0 1rem`,
 
   'li::marker': {
     fontSize: `1em`,

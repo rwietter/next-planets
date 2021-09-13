@@ -17,10 +17,11 @@
     "react-loading-skeleton": "^2.2.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.15.4",
     "@types/axios": "^0.14.0",
     "@types/react": "^17.0.20",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
-    "@typescript-eslint/parser": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.1",
     "airbnb": "^0.0.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",

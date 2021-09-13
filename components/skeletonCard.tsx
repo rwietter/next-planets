@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
 import {
@@ -15,7 +15,7 @@ interface CardProps {
   count: number;
 }
 
-const SkeletonCard: React.FC<CardProps> = ({ count }) => (
+const SkeletonCard: FC<CardProps> = ({ count }) => (
   <>
     {Array(count)
       .fill(count)
