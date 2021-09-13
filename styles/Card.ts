@@ -25,7 +25,7 @@ const PlanetImage = styled(Image, {
 });
 
 const CardInfo = styled(`div`, {
-  padding: `1.5rem 1.5rem 0 1.5rem`,
+  padding: `2rem`,
   display: `flex`,
   justifyContent: `space-between`,
   flexFlow: `column`,
@@ -37,7 +37,6 @@ const CardTitle = styled(`h1`, {
   color: `#fff`,
   fontFamily: `Untitled Sans, apple-system, sans-serif`,
   fontSize: `clamp(1.2rem, 2vw, 1.6rem)`,
-  padding: 0,
 
   '&::before': {
     content: `─`,
@@ -54,19 +53,23 @@ const CardPlanetInfo = styled(`ul`, {
   flexFlow: `column`,
   lineHeight: 1.6,
   justifyContent: `space-evenly`,
-  margin: 0,
+  padding: `2rem 0 0 2rem`,
 
-  'li': {
-    margin: 0,
+  li: {
     marginRight: `2rem`,
-    padding: 0,
+  },
+
+  'li::marker': {
+    fontSize: `1em`,
+    fontWeight: `bold`,
+    color: `#00C997`,
   },
 });
 
 const CardMoreInfo = styled(`button`, {
   position: `absolute`,
   right: `30px`,
-  bottom: `20px`,
+  bottom: `-20px`,
   color: `#9e8cfc`,
   background: `#2c2250`,
   fontFamily: `Untitled Sans, apple-system, sans-serif`,

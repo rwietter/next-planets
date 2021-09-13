@@ -31,9 +31,9 @@ const SkeletonCard: React.FC<CardProps> = ({ count }) => (
 
             <CardPlanetInfo>
               <li>
-                <Skeleton height="2rem" width="7rem" />
+                <Skeleton height="1rem" width="7rem" />
               </li>
-              <Skeleton height="2rem" width="7rem" />
+              <Skeleton height="1rem" width="7rem" />
             </CardPlanetInfo>
 
             <CardMoreInfo>Conhecer</CardMoreInfo>
