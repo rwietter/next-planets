@@ -9,6 +9,7 @@ const Card = styled(`section`, {
   marginTop: `5rem`,
   borderTopRightRadius: `4rem`,
   borderBottomLeftRadius: `4rem`,
+  position: `relative`,
 });
 
 const CardImage = styled(`div`, {
@@ -24,7 +25,7 @@ const PlanetImage = styled(Image, {
 });
 
 const CardInfo = styled(`div`, {
-  padding: `2rem`,
+  padding: `1.5rem 1.5rem 0 1.5rem`,
   display: `flex`,
   justifyContent: `space-between`,
   flexFlow: `column`,
@@ -35,7 +36,8 @@ const CardInfo = styled(`div`, {
 const CardTitle = styled(`h1`, {
   color: `#fff`,
   fontFamily: `Untitled Sans, apple-system, sans-serif`,
-  fontSize: `clamp(1.2rem, 3vw, 1.6rem)`,
+  fontSize: `clamp(1.2rem, 2vw, 1.6rem)`,
+  padding: 0,
 
   '&::before': {
     content: `─`,
@@ -47,21 +49,24 @@ const CardTitle = styled(`h1`, {
 const CardPlanetInfo = styled(`ul`, {
   color: `#fff`,
   fontFamily: `Untitled Sans, apple-system, sans-serif`,
-  fontSize: `clamp(0.9rem, 2vw, 1.2rem)`,
+  fontSize: `clamp(0.9rem, 2vw, 1.1rem)`,
   display: `flex`,
+  flexFlow: `column`,
+  lineHeight: 1.6,
   justifyContent: `space-evenly`,
-  listStyle: `none`,
-  paddingTop: `2rem`,
+  margin: 0,
 
   'li': {
-    marginRight: `2rem`
+    margin: 0,
+    marginRight: `2rem`,
+    padding: 0,
   },
 });
 
 const CardMoreInfo = styled(`button`, {
   position: `absolute`,
   right: `30px`,
-  bottom: `-60px`,
+  bottom: `20px`,
   color: `#9e8cfc`,
   background: `#2c2250`,
   fontFamily: `Untitled Sans, apple-system, sans-serif`,

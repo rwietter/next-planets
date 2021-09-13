@@ -17,13 +17,11 @@ const Home: NextPage = () => {
   const [planets, setPlanets] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const globalStyles = async () => {
-    const { GlobalStyles } = await import(`../styles/global`);
-    return GlobalStyles;
-  };
-
   useEffect(() => {
-    globalStyles();
+    (async () => {
+      const { GlobalStyles } = await import(`../styles/global`);
+      GlobalStyles();
+    })();
   }, []);
 
   const getPlanets = async () => {
