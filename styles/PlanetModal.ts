@@ -104,5 +104,26 @@ export const Card = styled(`section`, {
   minHeight: `15rem`,
   position: `relative`,
   borderRadius: `8px`,
-  color: `#fff`
+  color: `#fff`,
+});
+
+export const IconThemeContainer = styled(`div`, {
+  width: `10rem`,
+  height: `10rem`,
+  position: `relative`,
+});
+
+export const IconTheme = styled(`div`, {
+  backgroundImage: `linear-gradient(to left top, #151718, #151718, #151718, #151718,
+  #151718, #15191b, #161b1d, #161d20, #162126, #16252c, #162a32, #152e38);`,
+  clipPath: `circle(55.1% at 18% 17%)`,
+  width: `9rem`,
+  height: `9rem`,
+  transition: `all 0.4s ease`,
+  position: `absolute`,
+
+  '&:hover': {
+    width: `10rem`,
+    height: `10rem`,
+  },
 });

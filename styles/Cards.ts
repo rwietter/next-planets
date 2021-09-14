@@ -3,7 +3,7 @@ import { styled } from '@stitches/react';
 const Cards = styled(`section`, {
   display: `grid`,
   gridTemplateColumns: `1fr`,
-  gap: `6rem 3rem`,
+  gap: `6rem 4rem`,
   placeItems: `center`,
   placeContent: `center`,
   padding: `8rem 1rem`,

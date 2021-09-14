@@ -13,14 +13,14 @@ export interface IPlanet {
   discoveryDate: string;
   eccentricity: number;
   englishName:
-  | 'Mercury'
-  | 'Venus'
-  | 'Earth'
-  | 'Mars'
-  | 'Jupiter'
-  | 'Saturn'
-  | 'Uranus'
-  | 'Neptune';
+  | `Mercury`
+  | `Venus`
+  | `Earth`
+  | `Mars`
+  | `Jupiter`
+  | `Saturn`
+  | `Uranus`
+  | `Neptune`;
   equaRadius: number;
   escape: number;
   flattening: number;
@@ -35,7 +35,12 @@ export interface IPlanet {
     massExponent: number;
   };
   meanRadius: number;
-  moons: null;
+  moons: [
+    {
+      moon: string;
+      rel: string;
+    }
+  ];
   name: string;
   perihelion: number;
   polarRadius: number;
@@ -50,7 +55,7 @@ export interface IPlanet {
 }
 
 export type IIsNotPlanet = {
-  id: 'ceres' | 'eris' | 'pluton' | 'haumea' | 'makemake';
+  id: `ceres` | `eris` | `pluton` | `haumea` | `makemake`;
 };
 
 export type IPlanetSideralOrbit = {

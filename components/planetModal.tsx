@@ -13,6 +13,8 @@ import {
   Wrapper,
   WrapperGradient,
   Card,
+  IconTheme,
+  IconThemeContainer,
 } from '../styles/PlanetModal';
 
 export interface IModalProps {
@@ -48,18 +50,65 @@ const PlanetModal: FC<IModalProps> = (props) => {
         </Button>
         <main>
           <Cards>
-            <Card>Aphelion: {props.planet.aphelion} Km</Card>
-            <Card>Perihelion: {props.planet.perihelion} Km</Card>
-            <Card>Sideral Rotation: {props.planet.sideralRotation} hour</Card>
             <Card>
-              Volume:
-              {props.planet.vol.volValue}*10^{props.planet.vol.volExponent}
+              <IconThemeContainer>
+                <IconTheme>SVG</IconTheme>
+              </IconThemeContainer>
+              <div>
+                <li>Aphelion</li>
+                <p>{props.planet.aphelion} Km</p>
+              </div>
             </Card>
             <Card>
-              Massa:
-              {props.planet.mass.massValue}*10^{props.planet.mass.massExponent}
+              <IconThemeContainer>
+                <IconTheme>SVG</IconTheme>
+              </IconThemeContainer>
+              <div>
+                <li>Perihelion</li>
+                <p>{props.planet.perihelion} Km</p>
+              </div>
             </Card>
-            <Card>Inclinação: {props.planet.inclination}°</Card>
+            <Card>
+              <IconThemeContainer>
+                <IconTheme>SVG</IconTheme>
+              </IconThemeContainer>
+              <div>
+                <li>Sideral Rotation</li>
+                <p>{props.planet.sideralRotation} hour</p>
+              </div>
+            </Card>
+            <Card>
+              <IconThemeContainer>
+                <IconTheme>SVG</IconTheme>
+              </IconThemeContainer>
+              <div>
+                <li>Volume:</li>
+                <p>
+                  {props.planet.vol.volValue}*10^{props.planet.vol.volExponent}
+                </p>
+              </div>
+            </Card>
+            <Card>
+              <IconThemeContainer>
+                <IconTheme>SVG</IconTheme>
+              </IconThemeContainer>
+              <div>
+                <li>Massa</li>
+                <p>
+                  {props.planet.mass.massValue}*10^
+                  {props.planet.mass.massExponent}
+                </p>
+              </div>
+            </Card>
+            <Card>
+              <IconThemeContainer>
+                <IconTheme>SVG</IconTheme>
+              </IconThemeContainer>
+              <div>
+                <li>Inclinação</li>
+                <p>{props.planet.inclination}°</p>
+              </div>
+            </Card>
           </Cards>
         </main>
       </WrapperGradient>
