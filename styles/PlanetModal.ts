@@ -25,6 +25,7 @@ export const Wrapper = styled(`div`, {
   animation: `${FadeInUp} 500ms ease both`,
   minHeight: `100vh`,
   overflow: `auto`,
+  boxShadow: `0 -3px 39px rgba(0, 0, 0, 0.5)`,
 });
 
 export const WrapperGradient = styled(`div`, {
@@ -39,12 +40,13 @@ export const WrapperGradient = styled(`div`, {
   left: 0,
   position: `fixed`,
   animation: `${FadeInUp} 500ms ease both`,
+  boxShadow: `0 -3px 39px rgba(0, 0, 0, 0.5)`,
 });
 
 export const Button = styled(`button`, {
   position: `absolute`,
   zIndex: 7,
-  right: `80px`,
+  right: `40px`,
   top: `30px`,
   outline: `none`,
   border: `none`,
@@ -53,6 +55,11 @@ export const Button = styled(`button`, {
   padding: `1rem`,
   width: `3rem`,
   height: `3rem`,
+  transition: `all .4s ease`,
+
+  '@media(min-width: 520px)': {
+    right: `70px`,
+  },
 });
 
 export const SectionTitle = styled(`section`, {
@@ -73,6 +80,7 @@ export const Title = styled(`h1`, {
   fontSize: `clamp(1.5rem, 3vw, 2.9rem)`,
   fontFamily: `Untitled Sans`,
   fontWeight: 700,
+  boxShadow: `inset 0 -20px 0 rgba(140, 75, 254, 0.4)`,
 });
 
 export const Cards = styled(`section`, {
@@ -108,8 +116,7 @@ export const Card = styled(`section`, {
 });
 
 export const IconThemeContainer = styled(`div`, {
-  width: `10rem`,
-  height: `10rem`,
+  height: `8rem`,
   position: `relative`,
 });
 
@@ -121,9 +128,38 @@ export const IconTheme = styled(`div`, {
   height: `9rem`,
   transition: `all 0.4s ease`,
   position: `absolute`,
+  display: `flex`,
+  alignItems: `flex-start`,
+  justifyContent: `flex-start`,
+  transform: `perspective(9rem) `,
 
   '&:hover': {
     width: `10rem`,
     height: `10rem`,
   },
+
+  '& div': {
+    margin: `1rem 0 0 1rem !important`,
+  },
+});
+
+export const DescriptionContainer = styled(`div`, {
+  padding: `0 0 1rem 1rem`,
+  lineHeight: 1.9,
+});
+
+export const DescriptionTitle = styled(`h3`, {
+  fontSize: `clamp(1rem, 2vw, 1.3rem)`,
+  listStyle: `none`,
+
+  '&:before': {
+    content: `─ `,
+    color: `#FFC75F`,
+  },
+});
+
+export const Description = styled(`p`, {
+  fontSize: `clamp(1rem, 2vw, 1.1rem)`,
+  boxShadow: `inset 0 -10px 0 RGBA(77, 188, 156, 0.5)`,
+  maxWidth: `max-content`,
 });
