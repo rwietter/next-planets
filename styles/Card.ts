@@ -15,7 +15,6 @@ const Card = styled(`section`, {
   #151718, #15191b, #161b1d, #161d20, #162126, #16252c, #162a32, #152e38);`,
   width: `100%`,
   minHeight: `15rem`,
-  marginTop: `5rem`,
   borderTopRightRadius: `4rem`,
   borderBottomLeftRadius: `4rem`,
   position: `relative`,
@@ -57,12 +56,12 @@ const CardTitle = styled(`h1`, {
 const CardPlanetInfo = styled(`ul`, {
   color: `#fff`,
   fontFamily: `Untitled Sans, apple-system, sans-serif`,
-  fontSize: `clamp(0.9rem, 2vw, 1.1rem)`,
+  fontSize: `clamp(1rem, 2vw, 1.2rem)`,
   display: `flex`,
   flexFlow: `column`,
-  lineHeight: 1.6,
+  lineHeight: 1.8,
   justifyContent: `space-evenly`,
-  padding: `2rem 0 0 1rem`,
+  padding: `1.3rem 0 0 1rem`,
 
   'li::marker': {
     fontSize: `1em`,
@@ -74,7 +73,7 @@ const CardPlanetInfo = styled(`ul`, {
 const CardMoreInfo = styled(`button`, {
   position: `absolute`,
   right: `30px`,
-  bottom: `20px`,
+  bottom: `30px`,
   color: `#9e8cfc`,
   background: `#2c2250`,
   fontFamily: `Untitled Sans, apple-system, sans-serif`,
