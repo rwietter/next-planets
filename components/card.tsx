@@ -48,7 +48,7 @@ const CardPlanet: FC<CardProps> = ({ planets }) => {
         const planetImg = PlanetImages[planet.englishName];
         const planetState = PlanetState[planet.englishName];
         return (
-          <Card className="card" key={planet.id}>
+          <Card className="card" key={planet.englishName}>
             <CardImage
               css={{
                 animation: `${rotate} 30000ms linear infinite both`,

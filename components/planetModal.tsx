@@ -8,7 +8,6 @@ import { IPlanet } from '../@types/Planet';
 import {
   Button,
   SectionTitle,
-  Separator,
   Title,
   Cards,
   Wrapper,
@@ -24,7 +23,8 @@ export interface IModalProps {
 
 const PlanetModal: FC<IModalProps> = (props) => {
   if (!props.visible) return null;
-
+  console.log(props.planet);
+  
   return (
     <Wrapper>
       <WrapperGradient>
@@ -48,12 +48,18 @@ const PlanetModal: FC<IModalProps> = (props) => {
         </Button>
         <main>
           <Cards>
-            <Card>{props.planet.aphelion}</Card>
-            <Card>{props.planet.avgTemp}</Card>
-            <Card>{props.planet.density}</Card>
-            <Card>{props.planet.aphelion}</Card>
-            <Card>{props.planet.escape}</Card>
-            <Card>{props.planet.inclination}</Card>
+            <Card>Aphelion: {props.planet.aphelion} Km</Card>
+            <Card>Perihelion: {props.planet.perihelion} Km</Card>
+            <Card>Sideral Rotation: {props.planet.sideralRotation} hour</Card>
+            <Card>
+              Volume:
+              {props.planet.vol.volValue}*10^{props.planet.vol.volExponent}
+            </Card>
+            <Card>
+              Massa:
+              {props.planet.mass.massValue}*10^{props.planet.mass.massExponent}
+            </Card>
+            <Card>Inclinação: {props.planet.inclination}°</Card>
           </Cards>
         </main>
       </WrapperGradient>

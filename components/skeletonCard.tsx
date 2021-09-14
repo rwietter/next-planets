@@ -19,8 +19,8 @@ const SkeletonCard: FC<CardProps> = ({ count }) => (
   <>
     {Array(count)
       .fill(count)
-      .map((item) => (
-        <Card key={item}>
+      .map((item: number) => (
+        <Card key={item.toString()}>
           <CardImage>
             <Skeleton height="7rem" width="7rem" circle />
           </CardImage>
