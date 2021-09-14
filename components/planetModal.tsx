@@ -2,57 +2,64 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable react/destructuring-assignment */
 
-import { keyframes, styled } from '@stitches/react';
-
-import {
-  FC,
-} from 'react';
+import { FC } from 'react';
 
 import { IPlanet } from '../@types/Planet';
+import {
+  Button,
+  SectionTitle,
+  Separator,
+  Title,
+  Cards,
+  Wrapper,
+  WrapperGradient,
+  Card,
+} from '../styles/PlanetModal';
 
 export interface IModalProps {
   planet: IPlanet;
   visible: boolean;
   handleShowModal: () => void;
 }
+
 const PlanetModal: FC<IModalProps> = (props) => {
   if (!props.visible) return null;
 
   return (
-    <Wrapper
-      css={{
-        background: `#111`,
-        width: `100vw`,
-        height: `90vh`,
-        position: `fixed`,
-        top: `10vh`,
-        left: 0,
-        right: 0,
-      }}>
-      <button type="button" onClick={props.handleShowModal}>
-        {props.planet.englishName}
-      </button>
+    <Wrapper>
+      <WrapperGradient>
+        <SectionTitle>
+          <Title>{props.planet.englishName.toUpperCase()}</Title>
+        </SectionTitle>
+        <Button type="button" onClick={props.handleShowModal}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            strokeWidth="3"
+            stroke="#FFFFFF"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </Button>
+        <main>
+          <Cards>
+            <Card>{props.planet.aphelion}</Card>
+            <Card>{props.planet.avgTemp}</Card>
+            <Card>{props.planet.density}</Card>
+            <Card>{props.planet.aphelion}</Card>
+            <Card>{props.planet.escape}</Card>
+            <Card>{props.planet.inclination}</Card>
+          </Cards>
+        </main>
+      </WrapperGradient>
     </Wrapper>
   );
 };
-
-
-const FadeInUp = keyframes({
-  '0%': {
-    opacity: 0,
-    transform: `translate3d(0, 100%, 0)`,
-  },
-
-  '100%': {
-    opacity: 1,
-    transform: `translate3d(0, 0, 0)`,
-  },
-});
-
-const Wrapper = styled(`div`, {
-  animation: `${FadeInUp} 500ms ease both`,
-});
-
 
 
 export default PlanetModal;

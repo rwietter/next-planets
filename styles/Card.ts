@@ -74,7 +74,7 @@ const CardPlanetInfo = styled(`ul`, {
 const CardMoreInfo = styled(`button`, {
   position: `absolute`,
   right: `30px`,
-  bottom: `-20px`,
+  bottom: `20px`,
   color: `#9e8cfc`,
   background: `#2c2250`,
   fontFamily: `Untitled Sans, apple-system, sans-serif`,

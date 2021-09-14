@@ -12,3 +12,15 @@
   font-weight: 500;
   font-display: swap;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #9e8cfc;
+}
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}

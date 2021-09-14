@@ -7,7 +7,6 @@ const Cards = styled(`section`, {
   placeItems: `center`,
   placeContent: `center`,
   padding: `5rem 1rem`,
-  position: `relative`,
   width: `calc(90vw - 3rem)`,
 
   '@media(min-width: 920px)': {

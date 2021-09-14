@@ -1,4 +1,4 @@
-import  { FC, useCallback, useState } from 'react';
+import  { FC, useCallback, useEffect, useState } from 'react';
 
 import { IPlanet } from '../@types/Planet';
 import {
@@ -30,13 +30,25 @@ const CardPlanet: FC<CardProps> = ({ planets }) => {
     setThePlanet(data);
   };
 
+  useEffect(() => {
+    try {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: `smooth`,
+      });
+    } catch (error) {
+      window.scrollTo(0, 0);
+    }
+  }, [visible]);
+
   return (
     <>
       {planets.map((planet: IPlanet) => {
         const planetImg = PlanetImages[planet.englishName];
         const planetState = PlanetState[planet.englishName];
         return (
-          <Card key={planet.id.toString()}>
+          <Card className="card" key={planet.id}>
             <CardImage
               css={{
                 animation: `${rotate} 30000ms linear infinite both`,
