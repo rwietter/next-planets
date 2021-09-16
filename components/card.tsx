@@ -69,7 +69,7 @@ const CardPlanet: FC<CardProps> = ({ planets }) => {
                   handleSetPlanet(planet);
                   handleShowModal();
                 }}>
-                Conhecer
+                See more
               </CardMoreInfo>
             </CardInfo>
           </Card>

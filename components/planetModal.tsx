@@ -163,7 +163,7 @@ const PlanetModal: FC<IModalProps> = (props) => (
                   variants={titleVariant}
                   initial="hidden"
                   animate="visible">
-                Massa
+                Mass
               </DescriptionTitle>
               <Description
                   variants={descriptionVariant}
