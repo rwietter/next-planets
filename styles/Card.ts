@@ -1,4 +1,5 @@
 import { keyframes, styled } from '@stitches/react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export const rotate = keyframes({
@@ -10,7 +11,7 @@ export const rotate = keyframes({
   },
 });
 
-const Card = styled(`section`, {
+const Card = styled(motion.section, {
   backgroundImage: `linear-gradient(to left top, #151718, #151718, #151718, #151718,
   #151718, #15191b, #161b1d, #161d20, #162126, #16252c, #162a32, #152e38);`,
   width: `100%`,
@@ -20,7 +21,16 @@ const Card = styled(`section`, {
   position: `relative`,
 });
 
-const CardImage = styled(`div`, {
+const CardAnimation = styled(motion.div, {
+  display: `flex`,
+  width: `100%`,
+  height: `100%`,
+  bottom: 0,
+  left: 0,
+  position: `fixed`,
+});
+
+const CardImage = styled(motion.div, {
   position: `absolute`,
   top: `-40px`,
   right: `-4px`,
@@ -101,4 +111,5 @@ export {
   CardTitle,
   CardPlanetInfo,
   CardMoreInfo,
+  CardAnimation,
 };

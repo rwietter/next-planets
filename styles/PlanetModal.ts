@@ -1,4 +1,15 @@
 import { keyframes, styled } from "@stitches/react";
+import { motion } from "framer-motion";
+
+const wapperBackdrop = {
+  bottom: 0,
+  left: 0,
+  position: `fixed`,
+  height: `100%`,
+  overflow: `auto`,
+  width: `100%`,
+  top: `5rem`,
+};
 
 export const FadeInUp = keyframes({
   '0%': {
@@ -12,35 +23,22 @@ export const FadeInUp = keyframes({
   },
 });
 
-export const Wrapper = styled(`div`, {
+export const Wrapper = styled(motion.div, {
   backgroundImage: `linear-gradient(to left top, #151718, #151718, #151718, #151718,
   #151718, #15191b, #161b1d, #161d20, #162126, #16252c, #162a32, #152e38);`,
-  height: `100%`,
-  width: `100%`,
   zIndex: 4,
-  bottom: 0,
-  top: `5rem`,
-  left: 0,
-  position: `fixed`,
-  animation: `${FadeInUp} 500ms ease both`,
   minHeight: `100vh`,
-  overflow: `auto`,
   boxShadow: `0 -3px 39px rgba(0, 0, 0, 0.5)`,
+  ...wapperBackdrop,
 });
 
-export const WrapperGradient = styled(`div`, {
+export const WrapperGradient = styled(motion.div, {
   background: `radial-gradient(circle at top left,
     #2c2250, rgba(255, 255, 255, 0) 40%),
     radial-gradient(circle at 80% 20%, #07303b,
     rgba(255, 255, 255, 0) 30%)`,
-  height: `inherit`,
-  width: `inherit`,
   zIndex: 5,
-  bottom: 0,
-  left: 0,
-  position: `fixed`,
-  animation: `${FadeInUp} 500ms ease both`,
-  boxShadow: `0 -3px 39px rgba(0, 0, 0, 0.5)`,
+  ...wapperBackdrop,
 });
 
 export const Button = styled(`button`, {
@@ -74,7 +72,7 @@ export const SectionTitle = styled(`section`, {
   right: 0,
 });
 
-export const Title = styled(`h1`, {
+export const Title = styled(motion.h1, {
   color: `#fff`,
   textAlign: `center`,
   fontSize: `clamp(1.5rem, 3vw, 2.9rem)`,
@@ -105,7 +103,7 @@ export const Cards = styled(`section`, {
   },
 });
 
-export const Card = styled(`section`, {
+export const Card = styled(motion.section, {
   backgroundImage: `linear-gradient(to left top, #151718, #151718, #151718, #151718,
   #151718, #15191b, #161b1d, #161d20, #162126, #16252c, #162a32, #152e38);`,
   width: `100%`,
@@ -148,7 +146,7 @@ export const DescriptionContainer = styled(`div`, {
   lineHeight: 1.9,
 });
 
-export const DescriptionTitle = styled(`h3`, {
+export const DescriptionTitle = styled(motion.h3, {
   fontSize: `clamp(1rem, 2vw, 1.3rem)`,
   listStyle: `none`,
 
@@ -158,7 +156,7 @@ export const DescriptionTitle = styled(`h3`, {
   },
 });
 
-export const Description = styled(`p`, {
+export const Description = styled(motion.p, {
   fontSize: `clamp(1rem, 2vw, 1.1rem)`,
   boxShadow: `inset 0 -10px 0 RGBA(77, 188, 156, 0.5)`,
   maxWidth: `max-content`,

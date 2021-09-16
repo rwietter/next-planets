@@ -4,7 +4,7 @@
 
 import Image from 'next/image';
 
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
 import { IPlanet } from '../@types/Planet';
 import Mass from '../public/images/mass-planet.svg';
@@ -27,6 +27,12 @@ import {
   DescriptionTitle,
   Description,
 } from '../styles/PlanetModal';
+import {
+  cardVariant,
+  descriptionVariant,
+  planetVariants,
+  titleVariant,
+} from '../utils/animations';
 
 export interface IModalProps {
   planet: IPlanet;
@@ -34,17 +40,16 @@ export interface IModalProps {
   handleShowModal: () => void;
 }
 
-const PlanetModal: FC<IModalProps> = (props) => {
-  if (!props.visible) return null;
-  
-  return (
-    <Wrapper>
-      <WrapperGradient>
-        <SectionTitle>
-          <Title>{props.planet.englishName.toUpperCase()}</Title>
-        </SectionTitle>
-        <Button type="button" onClick={props.handleShowModal}>
-          <svg
+const PlanetModal: FC<IModalProps> = (props) => (
+  <Wrapper>
+    <WrapperGradient>
+      <SectionTitle>
+        <Title variants={planetVariants} initial="hidden" animate="visible">
+          {props.planet.englishName.toUpperCase()}
+        </Title>
+      </SectionTitle>
+      <Button type="button" onClick={props.handleShowModal}>
+        <svg
             xmlns="http://www.w3.org/2000/svg"
             width="44"
             height="44"
@@ -54,95 +59,146 @@ const PlanetModal: FC<IModalProps> = (props) => {
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
-        </Button>
-        <main>
-          <Cards>
-            <Card>
-              <IconThemeContainer>
-                <IconTheme>
-                  <Image src={Aphelion} width="40px" height="40px" />
-                </IconTheme>
-              </IconThemeContainer>
-              <DescriptionContainer>
-                <DescriptionTitle>Aphelion</DescriptionTitle>
-                <Description>{props.planet.aphelion} Km</Description>
-              </DescriptionContainer>
-            </Card>
-            <Card>
-              <IconThemeContainer>
-                <IconTheme>
-                  <Image src={Perihelion} width="40px" height="40px" />
-                </IconTheme>
-              </IconThemeContainer>
-              <DescriptionContainer>
-                <DescriptionTitle>Perihelion</DescriptionTitle>
-                <Description>{props.planet.perihelion} Km</Description>
-              </DescriptionContainer>
-            </Card>
-            <Card>
-              <IconThemeContainer>
-                <IconTheme>
-                  <Image src={SideralOrbit} width="40px" height="40px" />
-                </IconTheme>
-              </IconThemeContainer>
-              <DescriptionContainer>
-                <DescriptionTitle>Sideral Orbit</DescriptionTitle>
-                <Description>
-                  {props.planet.sideralOrbit} Days
-                  {` `}|{` `}
-                  {(props.planet.sideralOrbit / 365).toFixed(2)} Years
-                </Description>
-              </DescriptionContainer>
-            </Card>
-            <Card>
-              <IconThemeContainer>
-                <IconTheme>
-                  <Image src={Volume} width="40px" height="40px" />
-                </IconTheme>
-              </IconThemeContainer>
-              <DescriptionContainer>
-                <DescriptionTitle>Volume</DescriptionTitle>
-                <Description>
-                  {props.planet.vol.volValue}*10^{props.planet.vol.volExponent}
-                </Description>
-              </DescriptionContainer>
-            </Card>
-            <Card>
-              <IconThemeContainer>
-                <IconTheme>
-                  <Image src={Mass} width="40px" height="40px" />
-                </IconTheme>
-              </IconThemeContainer>
-              <DescriptionContainer>
-                <DescriptionTitle>Massa</DescriptionTitle>
-                <Description>
-                  {props.planet.mass.massValue}*10^
-                  {props.planet.mass.massExponent}
-                </Description>
-              </DescriptionContainer>
-            </Card>
-            <Card>
-              <IconThemeContainer>
-                <IconTheme>
-                  <Image src={EquPlanet} width="40px" height="40px" />
-                </IconTheme>
-              </IconThemeContainer>
-              <DescriptionContainer>
-                <DescriptionTitle>Equatorial Radius</DescriptionTitle>
-                <Description>
-                  {props.planet.equaRadius.toFixed(1)} Km
-                </Description>
-              </DescriptionContainer>
-            </Card>
-          </Cards>
-        </main>
-      </WrapperGradient>
-    </Wrapper>
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </Button>
+      <main>
+        <Cards>
+          <Card variants={cardVariant} initial="hidden" animate="visible">
+            <IconThemeContainer>
+              <IconTheme>
+                <Image src={Aphelion} width="40px" height="40px" />
+              </IconTheme>
+            </IconThemeContainer>
+            <DescriptionContainer>
+              <DescriptionTitle
+                  variants={titleVariant}
+                  initial="hidden"
+                  animate="visible">
+                Aphelion
+              </DescriptionTitle>
+              <Description
+                  variants={descriptionVariant}
+                  initial="hidden"
+                  animate="visible">
+                {props.planet.aphelion} Km
+              </Description>
+            </DescriptionContainer>
+          </Card>
+          <Card variants={cardVariant} initial="hidden" animate="visible">
+            <IconThemeContainer>
+              <IconTheme>
+                <Image src={Perihelion} width="40px" height="40px" />
+              </IconTheme>
+            </IconThemeContainer>
+            <DescriptionContainer>
+              <DescriptionTitle
+                  variants={titleVariant}
+                  initial="hidden"
+                  animate="visible">
+                Perihelion
+              </DescriptionTitle>
+              <Description
+                  variants={descriptionVariant}
+                  initial="hidden"
+                  animate="visible">
+                {props.planet.perihelion} Km
+              </Description>
+            </DescriptionContainer>
+          </Card>
+          <Card variants={cardVariant} initial="hidden" animate="visible">
+            <IconThemeContainer>
+              <IconTheme>
+                <Image src={SideralOrbit} width="40px" height="40px" />
+              </IconTheme>
+            </IconThemeContainer>
+            <DescriptionContainer>
+              <DescriptionTitle
+                  variants={titleVariant}
+                  initial="hidden"
+                  animate="visible">
+                Sideral Orbit
+              </DescriptionTitle>
+              <Description
+                  variants={descriptionVariant}
+                  initial="hidden"
+                  animate="visible">
+                {props.planet.sideralOrbit} Days
+                {` `}|{` `}
+                {(props.planet.sideralOrbit / 365).toFixed(2)} Years
+              </Description>
+            </DescriptionContainer>
+          </Card>
+          <Card variants={cardVariant} initial="hidden" animate="visible">
+            <IconThemeContainer>
+              <IconTheme>
+                <Image src={Volume} width="40px" height="40px" />
+              </IconTheme>
+            </IconThemeContainer>
+            <DescriptionContainer>
+              <DescriptionTitle
+                  variants={titleVariant}
+                  initial="hidden"
+                  animate="visible">
+                Volume
+              </DescriptionTitle>
+              <Description
+                  variants={descriptionVariant}
+                  initial="hidden"
+                  animate="visible">
+                {props.planet.vol.volValue}*10^
+                {props.planet.vol.volExponent}
+              </Description>
+            </DescriptionContainer>
+          </Card>
+          <Card variants={cardVariant} initial="hidden" animate="visible">
+            <IconThemeContainer>
+              <IconTheme>
+                <Image src={Mass} width="40px" height="40px" />
+              </IconTheme>
+            </IconThemeContainer>
+            <DescriptionContainer>
+              <DescriptionTitle
+                  variants={titleVariant}
+                  initial="hidden"
+                  animate="visible">
+                Massa
+              </DescriptionTitle>
+              <Description
+                  variants={descriptionVariant}
+                  initial="hidden"
+                  animate="visible">
+                {props.planet.mass.massValue}*10^
+                {props.planet.mass.massExponent}
+              </Description>
+            </DescriptionContainer>
+          </Card>
+          <Card variants={cardVariant} initial="hidden" animate="visible">
+            <IconThemeContainer>
+              <IconTheme>
+                <Image src={EquPlanet} width="40px" height="40px" />
+              </IconTheme>
+            </IconThemeContainer>
+            <DescriptionContainer>
+              <DescriptionTitle
+                  variants={titleVariant}
+                  initial="hidden"
+                  animate="visible">
+                Equatorial Radius
+              </DescriptionTitle>
+              <Description
+                  variants={descriptionVariant}
+                  initial="hidden"
+                  animate="visible">
+                {props.planet.equaRadius.toFixed(1)} Km
+              </Description>
+            </DescriptionContainer>
+          </Card>
+        </Cards>
+      </main>
+    </WrapperGradient>
+  </Wrapper>
   );
-};
-
 
 export default PlanetModal;

@@ -15,18 +15,34 @@ interface CardProps {
   count: number;
 }
 
+const planetVariant = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+      },
+    },
+  };
+
 const SkeletonCard: FC<CardProps> = ({ count }) => (
   <>
     {Array(count)
       .fill(count)
       .map((item: number) => (
-        <Card key={item.toString()}>
+        <Card
+          key={item.toString()}
+          variants={planetVariant}
+          initial="hidden"
+          animate="visible">
           <CardImage>
             <Skeleton height="7rem" width="7rem" circle />
           </CardImage>
           <CardInfo>
             <CardTitle>
-              <Skeleton height="2rem" width="13rem" />
+              <Skeleton height="2rem" width="7rem" />
             </CardTitle>
 
             <CardPlanetInfo>
