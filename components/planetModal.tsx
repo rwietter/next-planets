@@ -4,7 +4,7 @@
 
 import Image from 'next/image';
 
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 
 import { IPlanet } from '../@types/Planet';
 import Mass from '../public/images/mass-planet.svg';
