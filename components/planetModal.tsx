@@ -50,15 +50,15 @@ const PlanetModal: FC<IModalProps> = (props) => (
       </SectionTitle>
       <Button type="button" onClick={props.handleShowModal}>
         <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="44"
-            height="44"
-            viewBox="0 0 24 24"
-            strokeWidth="3"
-            stroke="#FFFFFF"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round">
+          xmlns="http://www.w3.org/2000/svg"
+          width="44"
+          height="44"
+          viewBox="0 0 24 24"
+          strokeWidth="3"
+          stroke="#FFFFFF"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <polyline points="6 9 12 15 18 9" />
         </svg>
@@ -73,15 +73,15 @@ const PlanetModal: FC<IModalProps> = (props) => (
             </IconThemeContainer>
             <DescriptionContainer>
               <DescriptionTitle
-                  variants={titleVariant}
-                  initial="hidden"
-                  animate="visible">
+                variants={titleVariant}
+                initial="hidden"
+                animate="visible">
                 Aphelion
               </DescriptionTitle>
               <Description
-                  variants={descriptionVariant}
-                  initial="hidden"
-                  animate="visible">
+                variants={descriptionVariant}
+                initial="hidden"
+                animate="visible">
                 {props.planet.aphelion} Km
               </Description>
             </DescriptionContainer>
@@ -94,15 +94,15 @@ const PlanetModal: FC<IModalProps> = (props) => (
             </IconThemeContainer>
             <DescriptionContainer>
               <DescriptionTitle
-                  variants={titleVariant}
-                  initial="hidden"
-                  animate="visible">
+                variants={titleVariant}
+                initial="hidden"
+                animate="visible">
                 Perihelion
               </DescriptionTitle>
               <Description
-                  variants={descriptionVariant}
-                  initial="hidden"
-                  animate="visible">
+                variants={descriptionVariant}
+                initial="hidden"
+                animate="visible">
                 {props.planet.perihelion} Km
               </Description>
             </DescriptionContainer>
@@ -115,15 +115,15 @@ const PlanetModal: FC<IModalProps> = (props) => (
             </IconThemeContainer>
             <DescriptionContainer>
               <DescriptionTitle
-                  variants={titleVariant}
-                  initial="hidden"
-                  animate="visible">
+                variants={titleVariant}
+                initial="hidden"
+                animate="visible">
                 Sideral Orbit
               </DescriptionTitle>
               <Description
-                  variants={descriptionVariant}
-                  initial="hidden"
-                  animate="visible">
+                variants={descriptionVariant}
+                initial="hidden"
+                animate="visible">
                 {props.planet.sideralOrbit} Days
                 {` `}|{` `}
                 {(props.planet.sideralOrbit / 365).toFixed(2)} Years
@@ -138,17 +138,17 @@ const PlanetModal: FC<IModalProps> = (props) => (
             </IconThemeContainer>
             <DescriptionContainer>
               <DescriptionTitle
-                  variants={titleVariant}
-                  initial="hidden"
-                  animate="visible">
+                variants={titleVariant}
+                initial="hidden"
+                animate="visible">
                 Volume
               </DescriptionTitle>
               <Description
-                  variants={descriptionVariant}
-                  initial="hidden"
-                  animate="visible">
-                {props.planet.vol.volValue}*10^
-                {props.planet.vol.volExponent}
+                variants={descriptionVariant}
+                initial="hidden"
+                animate="visible">
+                {props.planet.vol.volValue}×10^
+                {props.planet.vol.volExponent} Km³
               </Description>
             </DescriptionContainer>
           </Card>
@@ -160,17 +160,17 @@ const PlanetModal: FC<IModalProps> = (props) => (
             </IconThemeContainer>
             <DescriptionContainer>
               <DescriptionTitle
-                  variants={titleVariant}
-                  initial="hidden"
-                  animate="visible">
+                variants={titleVariant}
+                initial="hidden"
+                animate="visible">
                 Mass
               </DescriptionTitle>
               <Description
-                  variants={descriptionVariant}
-                  initial="hidden"
-                  animate="visible">
-                {props.planet.mass.massValue}*10^
-                {props.planet.mass.massExponent}
+                variants={descriptionVariant}
+                initial="hidden"
+                animate="visible">
+                {props.planet.mass.massValue}×10^
+                {props.planet.mass.massExponent} Kg
               </Description>
             </DescriptionContainer>
           </Card>
@@ -182,15 +182,15 @@ const PlanetModal: FC<IModalProps> = (props) => (
             </IconThemeContainer>
             <DescriptionContainer>
               <DescriptionTitle
-                  variants={titleVariant}
-                  initial="hidden"
-                  animate="visible">
+                variants={titleVariant}
+                initial="hidden"
+                animate="visible">
                 Equatorial Radius
               </DescriptionTitle>
               <Description
-                  variants={descriptionVariant}
-                  initial="hidden"
-                  animate="visible">
+                variants={descriptionVariant}
+                initial="hidden"
+                animate="visible">
                 {props.planet.equaRadius.toFixed(1)} Km
               </Description>
             </DescriptionContainer>
@@ -199,6 +199,6 @@ const PlanetModal: FC<IModalProps> = (props) => (
       </main>
     </WrapperGradient>
   </Wrapper>
-  );
+);
 
 export default PlanetModal;
