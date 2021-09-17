@@ -57,11 +57,3 @@ export interface IPlanet {
 export type IIsNotPlanet = {
   id: `ceres` | `eris` | `pluton` | `haumea` | `makemake`;
 };
-
-export type IPlanetSideralOrbit = {
-  sideralOrbit: number;
-};
-
-export type IIsPlanet = {
-  isPlanet: boolean;
-};
