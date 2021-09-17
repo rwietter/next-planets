@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import { SkeletonTheme } from 'react-loading-skeleton';
 
-import { IIsNotPlanet, IIsPlanet, IPlanetSideralOrbit } from '../@types/Planet';
+import { IIsNotPlanet } from '../@types/Planet';
 import { SpaceAPI } from '../api';
 import { CardPlanet } from '../components/card';
 import { Header } from '../components/head';
@@ -25,23 +25,25 @@ const Home: NextPage = () => {
   }, []);
 
   const getPlanets = async () => {
-    const { data: spaceObject } = await SpaceAPI.get(`rest/bodies/`);
+    const {
+      data: { bodies: spaceObjects },
+    } = await SpaceAPI.get(`rest/bodies/`, {
+      data: `id,englishName,isPlanet,perihelion,aphelion,
+      inclination,mass,vol,density,gravityescape,equaRadius,polarRadius,
+      dimension,sideralOrbit,sideralRotation,discoveryDate,axialTilt,
+      avgTemp`,
+      params: {
+        filter: `isPlanet,neq,true`,
+        order: `sideralOrbit,asc`,
+      },
+    });
+    
+    if (!spaceObjects[0]) return false;
 
-    const spacePlanets = spaceObject?.bodies?.filter(
-      (object: IIsPlanet) => object.isPlanet
-    );
-
-    const realPlanets = spacePlanets
-      .filter((planet: IIsNotPlanet) => {
-        const { id } = planet;
-        return !NotPlanets[id];
-      }, {})
-      .sort(
-        (
-          prev: IPlanetSideralOrbit,
-          next: IPlanetSideralOrbit
-        ) => prev.sideralOrbit - next.sideralOrbit
-      );
+    const realPlanets = spaceObjects.filter((planet: IIsNotPlanet) => {
+      const { id } = planet;
+      return !NotPlanets[id];
+    }, {});
     setIsLoading((loading) => !loading);
     return setPlanets(realPlanets);
   };
